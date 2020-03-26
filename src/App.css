@@ -1,0 +1,117 @@
+.App {
+  text-align: center;
+  max-width: 1280px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.App-header {
+  font-size: 1.75rem;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.App-subheader {
+  font-size: 1.25rem;
+  padding: 0 8px;
+}
+
+.color-controller-box {
+  min-height: 200px;
+  min-width: 200px;
+  border: 4px solid black;
+}
+
+.color-markers-root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: .75rem;
+  margin-left: 2rem;
+}
+
+.color-marker {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.color-marker.animate {
+  animation: expand-and-shrink 1s;
+}
+
+.game-box {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.game-container {
+  display: flex;
+  margin: 0 1rem;
+  flex-direction: row;
+}
+
+.game-controls, .game-root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game-controls {
+  align-items: center;
+  margin: 2rem;
+}
+
+.game-scoreboard {
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+.level-select {
+  width: 120px;
+  border: 1px solid black;
+  height: 32px;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.start-game-button {
+  color: white;
+  background-color: green;
+  border-radius: 8px;
+  border: 0px;
+  font-size: 16px;
+  margin-top: 2rem;
+  min-width: 120px;
+  height: 40px;
+}
+
+.start-game-button:disabled {
+  cursor: not-allowed;
+  background-color: gray;
+}
+
+@media only screen and (max-width: 720px) {
+  .game-container {
+    flex-direction: column;
+  }  
+}
+
+@media only screen and (max-width: 480px) {
+  .color-markers-root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 24px;
+    margin-left: unset;
+  }
+  .game-box {
+    flex-direction: column;
+  }
+}
+
+@keyframes expand-and-shrink {
+  0%   {transform: scale(1.05);}
+  100%   {transform: scale(1);}
+}
